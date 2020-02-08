@@ -7,11 +7,41 @@ public abstract class Machine {
         this.isAvailable = isAvailable;
     }
 
-    public abstract boolean checkIfAvailable();
+    public boolean checkIfAvailable() {
+        if (checkIfWorking() == false) {
+            return false;
+        }
+        if (isAvailable == false) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
-    public abstract boolean checkIfWorking();
+    public boolean checkIfWorking(){
+        if(isWorking == false){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
 
-    public abstract void editUsageStatus();
+    public void editUsageStatus(){
+        if(isAvailable == false){
+            isAvailable = true;
+        }
+        else{
+            isAvailable = false;
+        }
+    }
 
-    public abstract void editWorkingStatus();
+    public void editWorkingStatus(){
+        if(isWorking == false){
+            isWorking = true;
+        }
+        else{
+            isWorking = false;
+        }
+    }
 }
