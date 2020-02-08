@@ -1,13 +1,13 @@
 public abstract class Machine {
     protected boolean isWorking;
-    protected boolean isInUse;
+    protected boolean isAvailable;
 
-    public Machine(boolean isWorking, boolean isInUse){
+    public Machine(boolean isWorking, boolean isAvailable){
         this.isWorking = isWorking;
-        this.isInUse = isInUse;
+        this.isAvailable = isAvailable;
     }
 
-    public abstract boolean checkIfInUse();
+    public abstract boolean checkIfAvailable();
 
     public abstract boolean checkIfWorking();
 

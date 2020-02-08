@@ -1,15 +1,15 @@
 public class Washer extends Machine {
 
-    public Washer(boolean isWorking, boolean isInUse){
-        super(isWorking, isInUse);
+    public Washer(boolean isWorking, boolean isAvailable){
+        super(isWorking, isAvailable);
     }
 
     @Override
-    public boolean checkIfInUse(){
+    public boolean checkIfAvailable(){
         if(checkIfWorking() == false){
             return false;
         }
-        if(isInUse == false){
+        if(isAvailable == false){
            return false;
         }
         else{
@@ -30,11 +30,11 @@ public class Washer extends Machine {
 
     @Override
     public void editUsageStatus(){
-        if(isInUse == false){
-            isInUse = true;
+        if(isAvailable == false){
+            isAvailable = true;
         }
         else{
-            isInUse = false;
+            isAvailable = false;
         }
     }
 
