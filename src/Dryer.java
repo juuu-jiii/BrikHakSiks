@@ -3,6 +3,7 @@ public class Dryer extends Machine{
     public Dryer(boolean isWorking, boolean isInUse) {
         super(isWorking, isInUse);
     }
+
     @Override
     public boolean checkIfInUse(){
         if(checkIfWorking() == false){
@@ -24,6 +25,25 @@ public class Dryer extends Machine{
         else{
             return true;
         }
+    }
 
+    @Override
+    public void editUsageStatus(){
+        if(isInUse == false){
+            isInUse = true;
+        }
+        else{
+            isInUse = false;
+        }
+    }
+
+    @Override
+    public void editWorkingStatus(){
+        if(isWorking == false){
+            isWorking = true;
+        }
+        else{
+            isWorking = false;
+        }
     }
 }

@@ -10,4 +10,8 @@ public abstract class Machine {
     public abstract boolean checkIfInUse();
 
     public abstract boolean checkIfWorking();
+
+    public abstract void editUsageStatus();
+
+    public abstract void editWorkingStatus();
 }

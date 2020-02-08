@@ -27,4 +27,24 @@ public class Washer extends Machine {
         }
 
     }
+
+    @Override
+    public void editUsageStatus(){
+        if(isInUse == false){
+            isInUse = true;
+        }
+        else{
+            isInUse = false;
+        }
+    }
+
+    @Override
+    public void editWorkingStatus(){
+        if(isWorking == false){
+            isWorking = true;
+        }
+        else{
+            isWorking = false;
+        }
+    }
 }
