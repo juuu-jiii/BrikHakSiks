@@ -1,4 +1,4 @@
-public class Machine {
+public abstract class Machine {
     private boolean isWorking;
     private boolean isInUse;
 
