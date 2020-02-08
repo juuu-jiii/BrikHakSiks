@@ -3,8 +3,8 @@ public abstract class Machine {
     protected boolean isInUse;
 
     public Machine(boolean isWorking, boolean isInUse){
-        this.isWorking = true;
-        this.isInUse = false;
+        this.isWorking = isWorking;
+        this.isInUse = isInUse;
     }
 
     public abstract boolean checkIfInUse();
