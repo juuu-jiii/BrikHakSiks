@@ -5,6 +5,9 @@ public class Dryer extends Machine{
     }
     @Override
     public boolean checkIfInUse(){
+        if(checkIfWorking() == false){
+            return false;
+        }
         if(isInUse == false){
             return false;
         }

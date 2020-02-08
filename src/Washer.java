@@ -6,12 +6,15 @@ public class Washer extends Machine {
 
     @Override
     public boolean checkIfInUse(){
-       if(isInUse == false){
+        if(checkIfWorking() == false){
+            return false;
+        }
+        if(isInUse == false){
            return false;
-       }
-       else{
-           return true;
-       }
+        }
+        else{
+            return true;
+        }
     }
 
     @Override
