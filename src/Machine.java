@@ -4,7 +4,7 @@ public abstract class Machine {
 
     public Machine(boolean isWorking, boolean isInUse){
         this.isWorking = true;
-        this.isInUse = true;
+        this.isInUse = false;
     }
 
     public abstract boolean checkIfInUse();
