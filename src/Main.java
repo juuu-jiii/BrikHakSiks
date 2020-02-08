@@ -1,4 +1,4 @@
-public class LaundryRoom {
+public class Main {
     private int NUM_WASHERS = 20;
     private int NUM_DRYERS = 20;
 
