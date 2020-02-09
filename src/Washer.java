@@ -33,6 +33,6 @@ public class Washer extends Machine {
 
     @Override
     public void report(){
-
+        isWorking = false;
     }
 }
