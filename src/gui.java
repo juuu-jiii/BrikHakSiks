@@ -1,16 +1,20 @@
 import java.awt.*;
 import java.awt.event.*;
-
+import javax.swing.*;
 
 public class gui {
 
     private static final int button_count = 12;
     private static final int pop_up_button_count = 4;
     public static int washTime;
+    private static int countdownDuration;
 
     // Declare a Frame type variable
     Frame frame;
     Frame popUpFrame;
+
+    // Creating Timer object
+    Timer timer;
 
     // Create an array of Button type Objects
     Button[] button = new Button[button_count];
@@ -71,6 +75,7 @@ public class gui {
                             @Override
                             public void actionPerformed(ActionEvent e) {
                                 washTime = washTimeArray[finalI1];
+                                countdownDuration = 10;
                                 popUpFrame.setVisible(false);
                             }
                         }));
@@ -85,7 +90,13 @@ public class gui {
             });
             button[i].setBackground(Color.GREEN);
             button[i].setPreferredSize(new Dimension(200, 200));
+            for (int j = countdownDuration; j >= 0; j--)
+            {
+                button[i].setLabel("Washing Machine: " + (i + 1) + " | Time left: " + countdownDuration);
+            }
             frame.add(button[i]);
+
+
         }
 
         // Register window listener event to the frame without implementing WindowListener
@@ -111,3 +122,4 @@ public class gui {
         frame.setVisible(true);
     }
 }
+

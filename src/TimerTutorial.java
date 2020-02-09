@@ -2,6 +2,7 @@
 import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
+
 public class TimerTutorial extends JFrame {
     JLabel promptLabel, timerLabel;
     int counter;
@@ -10,7 +11,7 @@ public class TimerTutorial extends JFrame {
     Timer timer;
 
     public TimerTutorial() {
-        setLayout(new GridLayout(2, 2, 5, 5));
+        setLayout(new GridLayout(2,2,5,5));
         promptLabel = new JLabel("Enter seconds:", SwingConstants.CENTER);
         add(promptLabel);
         tf = new JTextField(5);
@@ -21,36 +22,38 @@ public class TimerTutorial extends JFrame {
         add(timerLabel);
         event e = new event();
         button.addActionListener(e);
-
     }
 
     public class event implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             int count = (int) (Double.parseDouble(tf.getText()));
-            timerLabel.setText("Time left: " + count);
+            timerLabel.setText("Time left: " + counter);
             TimeClass tc = new TimeClass(count);
             timer = new Timer(1000, tc);
             timer.start();
 
         }
     }
-    public class TimeClass implements ActionListener{
-            int counter;
-            public TimeClass(int counter){
-            this.counter= counter;
+
+    public class TimeClass implements ActionListener {
+        int counter;
+
+        public TimeClass(int counter) {
+            this.counter = counter;
         }
-        public void actionPerformed(ActionEvent tc){
-                counter--;
-                if (counter>= 1){
-                    timerLabel.setText("Time left: " + counter);
-                }
-                else{
-                    timer.stop();
-                    timerLabel.setText("Done!");
-                    Toolkit.getDefaultToolkit().beep();
-                }
+
+        public void actionPerformed(ActionEvent tc) {
+            counter--;
+            if (counter >= 1) {
+                timerLabel.setText("Time left: " + counter);
+            } else {
+                timer.stop();
+                timerLabel.setText("Done!");
+                Toolkit.getDefaultToolkit().beep();
             }
+        }
     }
+
     public static void main(String args[]){
         TimerTutorial gui = new TimerTutorial();
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
