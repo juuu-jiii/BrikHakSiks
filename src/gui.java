@@ -1,3 +1,6 @@
+import javafx.scene.shape.DrawMode;
+
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -47,7 +50,10 @@ public class gui {
 
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    //your actions
+                    frame.add(new TextField("Button pressed"));
+                    frame.setVisible(true);
+
+
                 }
             });
             button[i].setBackground(Color.GREEN);
@@ -58,7 +64,8 @@ public class gui {
         // Register window listener event to the frame without implementing WindowListener
         frame.addWindowListener(
                 new WindowAdapter() {
-                    public void windowClosing(WindowEvent e) {
+                    public void windowClosing(WindowEvent e)
+                    {
                         System.exit(0);
                     }
                 }

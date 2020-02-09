@@ -1,5 +1,4 @@
 public class Dryer extends Machine{
-
     public Dryer(String type) {
         super(type);
     }
