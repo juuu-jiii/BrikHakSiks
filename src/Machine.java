@@ -11,6 +11,7 @@ public abstract class Machine {
         this.type = type;
     }
 
+    // Checks if selected machine is taken up
     public boolean checkIfAvailable() {
         if (checkIfWorking() == false) {
             return false;
@@ -22,6 +23,7 @@ public abstract class Machine {
         }
     }
 
+    // Checks if selected machine is in working order
     public boolean checkIfWorking(){
         if(isWorking == false){
             return false;
@@ -31,6 +33,7 @@ public abstract class Machine {
         }
     }
 
+    // Switches usage status from AVAILABLE to UNAVAILABLE and vice versa
     public void editUsageStatus(){
         if(isAvailable == false){
             isAvailable = true;
@@ -40,6 +43,7 @@ public abstract class Machine {
         }
     }
 
+    // Switches working status from FUNCTIONING to OUT OF ORDER and vice versa
     public void editWorkingStatus(){
         if(isWorking == false){
             isWorking = true;
