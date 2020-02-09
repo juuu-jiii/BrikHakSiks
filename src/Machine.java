@@ -16,11 +16,7 @@ public abstract class Machine {
         if (checkIfWorking() == false) {
             return false;
         }
-        if (isAvailable == false) {
-            return false;
-        } else {
-            return true;
-        }
+        else return isAvailable;
     }
 
     // Checks if selected machine is in working order
