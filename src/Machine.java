@@ -1,10 +1,14 @@
 public abstract class Machine {
     protected boolean isWorking;
     protected boolean isAvailable;
+    protected int timeLeft;
+    protected String type;
 
-    public Machine(boolean isWorking, boolean isAvailable){
+    public Machine(boolean isWorking, boolean isAvailable, int timeLeft, String type){
         this.isWorking = isWorking;
         this.isAvailable = isAvailable;
+        this.timeLeft = timeLeft;
+        this.type = type;
     }
 
     public boolean checkIfAvailable() {
@@ -44,4 +48,9 @@ public abstract class Machine {
             isWorking = false;
         }
     }
+
+
+    public abstract void operate();
+
+    public abstract void report();
 }
