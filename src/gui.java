@@ -18,7 +18,7 @@ public class gui {
 
         // Use for loop to instantiate every button object
         for(int i = 0; i < button_count; ++i){
-            button[i] = new Button("Washing Machine: " + i );
+            button[i] = new Button("Washing Machine: " + (i + 1) );
         }
 
     }
