@@ -4,10 +4,10 @@ public abstract class Machine {
     protected int timeLeft;
     protected String type;
 
-    public Machine(boolean isWorking, boolean isAvailable, int timeLeft, String type){
-        this.isWorking = isWorking;
-        this.isAvailable = isAvailable;
-        this.timeLeft = timeLeft;
+    public Machine(String type){
+        isWorking = true;
+        isAvailable = true;
+        timeLeft = 0;
         this.type = type;
     }
 
