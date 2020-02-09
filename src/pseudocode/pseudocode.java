@@ -111,33 +111,15 @@ public void DrawToScreen()
 	}
 }
 
-public void MachineSelect()
-{
-	Loop through list
+MAIN()
+USER INPUT/FEEDBACK LOOP:
+	Instantiate Manager object
+	DrawToScreen()
+	Prompt for user input based on number next to .tostring() [see DrawToScreen()]
+	Parse userinput into an int
 
-	Draws to screen the washers/dryers available (each has a number/letter assigned to it)
-
-	Checks status of each, and writes to screen accordingly
-	if (functioning && !inUse)
-	{
-		Show as AVAILABLE
-	}
-	else
-	{
-		Show as UNAVAILABLE
-		if (!functioning)
-		{
-			Show as OUT OF ORDER
-		}
-		else if (inUse)
-		{
-			Show as IN USE
-			Display remaining time
-		}
-	}
-
-	Let user pick from the washers/dryers
-	if user picks one that is AVAILABLE
+	// If user picks one that is available
+	if (managerObject.AvailabilityCheck([userinput - 1]))
 	{
 		Prompt user to check if machine is in working order
 		if (yes)
@@ -152,18 +134,10 @@ public void MachineSelect()
 	}
 	else
 	{
-		Print error message.
-		Let user pick again.
+		Print error message
+		Let user prick again.
 	}
-}
 
-MAIN()
-USER INPUT/FEEDBACK LOOP
-DrawToScreen()
-Prompt for user input based on number next to .tostring() [see DrawToScreen())
-if (list[userinput
-
-sdghfh\sfd
      */
 
 }
