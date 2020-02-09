@@ -4,7 +4,7 @@ import java.awt.event.*;
 
 public class gui {
 
-    private static final int button_count = 10;
+    private static final int button_count = 12;
 
     // Declare a Frame type variable
     Frame frame;
@@ -20,8 +20,8 @@ public class gui {
         for(int i = 0; i < button_count; ++i){
             button[i] = new Button("Washing Machine: " + (i + 1) );
         }
-
     }
+
 
     public static void main(String[] args) {
 
@@ -36,13 +36,14 @@ public class gui {
     // Not necessary but good practice all codes inside this can be written inside main
     public void showFrame() {
         // set the size of the window
-        frame.setSize(400, 400);
+        frame.setSize(800, 800);
 
         // set the layout for the window
         frame.setLayout(new FlowLayout());
 
         // Add all of the buttons to the layout
         for(int i = 0; i < button_count; ++i) {
+            button[i].setPreferredSize(new Dimension(200, 200));
             frame.add(button[i]);
         }
 
