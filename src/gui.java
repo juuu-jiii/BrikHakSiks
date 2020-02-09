@@ -71,6 +71,7 @@ public class gui {
                             @Override
                             public void actionPerformed(ActionEvent e) {
                                 washTime = washTimeArray[finalI1];
+                                popUpFrame.setVisible(false);
                             }
                         }));
                         popUpButton[i].setPreferredSize(new Dimension(150, 70));
@@ -93,6 +94,15 @@ public class gui {
                     public void windowClosing(WindowEvent e)
                     {
                         System.exit(0);
+                    }
+                }
+        );
+
+        popUpFrame.addWindowListener(
+                new WindowAdapter() {
+                    public void WindowClosing(WindowEvent e)
+                    {
+                        popUpFrame.setVisible(false);
                     }
                 }
         );
