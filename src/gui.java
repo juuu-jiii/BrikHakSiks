@@ -43,6 +43,7 @@ public class gui {
 
         // Add all of the buttons to the layout
         for(int i = 0; i < button_count; ++i) {
+            button[i].setBackground(Color.GREEN);
             button[i].setPreferredSize(new Dimension(200, 200));
             frame.add(button[i]);
         }
