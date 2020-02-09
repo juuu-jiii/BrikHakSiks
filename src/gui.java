@@ -1,33 +1,61 @@
-import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.*;
+import java.awt.event.*;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JTextArea;
 
-public class gui{
+public class gui {
 
-    public static void main(String[] args) {
+    private static final int button_count = 10;
 
-        JFrame f = new JFrame("A JFrame");
-        f.setSize(250, 250);
-        f.setLocation(300,200);
-        final JTextArea textArea = new JTextArea(10, 40);
-        f.getContentPane().add(BorderLayout.CENTER, textArea);
-        final JButton button = new JButton("Click Me");
-        f.getContentPane().add(BorderLayout.SOUTH, button);
-        button.addActionListener(new ActionListener() {
+    // Declare a Frame type variable
+    Frame frame;
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                textArea.append("Button was clicked\n");
+    // Create an array of Button type Objects
+    Button [] button = new Button[button_count];
 
-            }
-        });
+    public gui() {
+        // Create Frame Object and pass in the Frame Name / title
+        frame = new Frame("Laundry Room");
 
-        f.setVisible(true);
+        // Use for loop to instantiate every button object
+        for(int i = 0; i < button_count; ++i){
+            button[i] = new Button("Washing Machine: " + i );
+        }
 
     }
 
+    public static void main(String[] args) {
+
+        // Create an instance of SimpleAwtGui
+        gui window = new gui();
+
+        // call the showFrame() function to display the window
+        window.showFrame();
+
+    }
+
+    // Not necessary but good practice all codes inside this can be written inside main
+    public void showFrame() {
+        // set the size of the window
+        frame.setSize(400, 400);
+
+        // set the layout for the window
+        frame.setLayout(new FlowLayout());
+
+        // Add all of the buttons to the layout
+        for(int i = 0; i < button_count; ++i) {
+            frame.add(button[i]);
+        }
+
+        // Register window listener event to the frame without implementing WindowListener
+        frame.addWindowListener(
+                new WindowAdapter() {
+                    public void windowClosing(WindowEvent e) {
+                        System.exit(0);
+                    }
+                }
+        );
+
+        // set the frame visible otherwise nothing will be shown
+        frame.setVisible(true);
+    }
 }
