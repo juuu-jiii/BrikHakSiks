@@ -36,7 +36,7 @@ public class gui {
     // Not necessary but good practice all codes inside this can be written inside main
     public void showFrame() {
         // set the size of the window
-        frame.setSize(800, 800);
+        frame.setSize(850, 850);
 
         // set the layout for the window
         frame.setLayout(new FlowLayout());
